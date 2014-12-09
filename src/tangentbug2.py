@@ -7,6 +7,7 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Vector3
+from std_msgs.msg import UInt32
 
 # max range is the artificial value used as the maximum range of the laser scanner
 maxRange = 3.0
@@ -129,18 +130,12 @@ def tangentbug():
 				if (scan.ranges[i] < 2.5):
 					control.linear.x = 0.0
 					control.angular.z = -0.5
-			# if (scan.ranges[int(len(scan.ranges)/2)+55] < 1.5):
-			# 	control.linear.x = 0.0
-			# 	control.angular.z = -0.5
-			# elif (scan.ranges[int(len(scan.ranges)/2)-55] < 1.5):
-			# 	control.linear.x = 0.0
-			# 	control.angular.z = 0.5
 
 			# stop moving if we're close enough to the goal
 			if math.sqrt((twi.linear.x) ** 2 + (twi.linear.y) ** 2) < 0.5:
 				control.linear.x = 0.0
 				control.linear.y = 0.0
-
+				
 			robotController.publish(control)
 			goalfromlaser.publish(twi)
 		except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):

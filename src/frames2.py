@@ -24,9 +24,7 @@ def goalframe(twi):
 	rate = rospy.Rate(10.0)
 	x = twi.linear.x
 	y = twi.linear.y
-	while not rospy.is_shutdown():
-		br.sendTransform((x,y,0.0),(0.0,0.0,0.0,1.0),rospy.Time.now(),"robot2/goal","robot2/world")
-		rate.sleep()
+	br.sendTransform((x,y,0.0),(0.0,0.0,0.0,1.0),rospy.Time.now(),"robot2/goal","robot2/world")
 
 if __name__ == '__main__': 
     try:

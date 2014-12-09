@@ -1,0 +1,12 @@
+# Define the goal
+float64 x
+float64 y
+---
+# Define the result
+uint32 robot0_thereOrNot
+uint32 robot1_thereOrNot
+uint32 robot2_thereOrNot
+---
+# Define a feedback message
+float64 x
+float64 y

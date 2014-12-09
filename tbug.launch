@@ -9,12 +9,6 @@
 		<param name="base_watchdog_timeout" value="0" />
 	</node>
 
-	<node name="goal0" pkg="tbug" type="goal0.py"/>
-
-	<node name="goal1" pkg="tbug" type="goal1.py"/>
-
-	<node name="goal2" pkg="tbug" type="goal2.py"/>
-
 	<node name="robotframe0" pkg="tbug" type="frames0.py"/>
 
 	<node name="robotframe1" pkg="tbug" type="frames1.py"/>
@@ -26,4 +20,12 @@
 	<node name="tangentbug1" pkg="tbug" type="tangentbug1.py"/>
 
 	<node name="tangentbug2" pkg="tbug" type="tangentbug2.py"/>
+
+	<node name="actionServer" pkg="tbug" type="actionServer.py"/>
+
+	<node name="goal0" pkg="tbug" type="goal0.py"/>
+
+	<node name="goal1" pkg="tbug" type="goal1.py"/>
+
+	<node name="goal2" pkg="tbug" type="goal2.py"/>
 </launch>
